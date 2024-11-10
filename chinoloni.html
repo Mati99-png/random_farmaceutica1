@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seleziona un'immagine casuale</h1>
+    <button id="press">Premi</button>
+    <div id="imageContainer">
+        <img id="randomImage" src="" alt="Immagine casuale">
+    </div>
+
+    <script>
+        const images = [
+            'chinoloni/acido_nalidixico.jpg',
+            'chinoloni/cinoxacina.jpg',
+            'chinoloni/acido_oxolinico.jpg',
+            'chinoloni/acido_pipemidico.jpg',
+            'chinoloni/norfloxacina.jpg',
+            'chinoloni/ofloxacina.jpg',
+            'chinoloni/grepafloxacina.jpg',
+            'chinoloni/sparfloxacina.jpg',
+            'chinoloni/gemifloxacina.jpg',
+            'chinoloni/moxifloxacina.jpg',
+            'chinoloni/ciprofloxacina.jpg',
+            'chinoloni/levofloxacina.jpg',
+            'chinoloni/clinafloxacina.jpg'
+        ];
+
+        document.getElementById('press').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const randomImage = images[randomIndex];
+            document.getElementById('randomImage').src = randomImage;
+        });
+    </script>
+
+</body>
+</html>
